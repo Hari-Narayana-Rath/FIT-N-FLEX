@@ -1,0 +1,32 @@
+[
+  {
+    "name": "ik",
+    "identifier": "ik@gmail.com",
+    "phone": "4444444444",
+    "password": "ik"
+  },
+  {
+    "name": "uk",
+    "identifier": "uk@gmail.com",
+    "phone": "1234567890",
+    "password": "$2b$10$9IB84g1UYFkUWMQqkLltIuPQoISElFtybmo.wLMZtx8N9pLnIfNjq"
+  },
+  {
+    "name": "ha",
+    "identifier": "h@gmail.com",
+    "phone": "1",
+    "password": "$2b$10$/KXzrE9XnnRqP.gzLtmx4edF9Kbb5vNVbazlhq/7bgNrvdtT4.iB6"
+  },
+  {
+    "name": "Narayana",
+    "identifier": "harinarayana_rath@srmap.edu.in",
+    "phone": "08763086451",
+    "password": "$2b$10$O2ETeuoR2W5Nk/8UAEu4Q.2wiTQV3wBr/FX/yEuHwiYUkV9M4UeCe"
+  },
+  {
+    "name": "Ayush",
+    "identifier": "ayush@gmail.com",
+    "phone": "8957090450",
+    "password": "$2b$10$yA1s06gEK.CwgtOl4vLupOMqGKvS3MGRbfyz1WJqD5Q.VtJtr4Pki"
+  }
+]

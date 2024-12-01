@@ -1,0 +1,130 @@
+.about-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Page container */
+.about-page {
+  font-family: 'Arial', sans-serif;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Content container */
+.about-container {
+  background: rgba(0, 0, 0, 0.616); /* Dark semi-transparent container */
+  padding: 40px 20px;
+  border-radius: 20px;
+  max-width: 900px;
+  width: 100%;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.6);
+  position: relative;
+  text-align: center;
+}
+
+/* Logo styling */
+.about-logo {
+  width: 100px;
+  border-radius: 50px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* Content wrapper */
+.about-content {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Heading styling */
+.about-heading {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #ffd700;
+  font-weight: bold;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+/* Description paragraph */
+.about-description {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  color: #e0e0e0;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Cards container */
+.about-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Individual card styling */
+.about-card {
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 15px;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Card title */
+.about-card-title {
+  font-size: 24px;
+  color: #ffd700;
+  margin-bottom: 15px;
+}
+
+/* Card text */
+.about-card-text {
+  font-size: 16px;
+  color: #dcdcdc;
+  line-height: 1.5;
+}
+
+/* Centered image */
+.center-image {
+  margin-top: 40px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .about-heading {
+    font-size: 36px;
+  }
+
+  .about-description {
+    font-size: 18px;
+  }
+
+  .about-card {
+    width: 100%;
+    max-width: 90%;
+  }
+}

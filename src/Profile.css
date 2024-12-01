@@ -1,0 +1,61 @@
+.profile-container {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url("/try3.jpg") no-repeat center center;
+  background-size: cover;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Styled container similar to the BMI container */
+.profile-card {
+  background: linear-gradient(135deg, #0a0d0f, #5c1717);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  position: relative; /* To position logo inside the card */
+}
+
+/* Clickable logo inside the card */
+.logo-container {
+  position: absolute;
+  top: -30px; /* Moves the logo slightly above the card */
+  left: 50%;
+  transform: translateX(-50%); /* Center the logo horizontally */
+  cursor: pointer;
+}
+
+.logo-image {
+  width: 100px; /* Adjust size as needed */
+  height: 100px;
+  border-radius: 50%; /* Make the logo circular */
+  border: 2px solid white; /* Optional: Add a border for emphasis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for the logo */
+.logo-container:hover .logo-image {
+  transform: scale(1.1); /* Enlarge slightly on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+.profile-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: wheat;
+  margin-bottom: 15px;
+  margin-top: 50px; /* Adjust for logo placement */
+}
+
+.profile-email,
+.profile-phone {
+  font-size: 18px;
+  color: #55a2d8;
+  margin-bottom: 10px;
+}

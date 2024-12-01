@@ -1,0 +1,59 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(71, 69, 69, 0.689); /* Transparent background */
+  backdrop-filter: blur(5px); /* Optional blur effect */
+  color: white;
+  padding: 10px 20px; /* Reduced padding to decrease height */
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100; /* Ensure it appears above the video */
+  box-sizing: border-box;
+  border-radius: 40px;
+}
+
+.navbar-title {
+  color:rgb(169, 194, 194);
+  font-size: 3rem; /* Slightly smaller font size */
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.navbar-buttons {
+  gap: 10px; /* Adjust gap if needed for smaller padding */
+}
+
+.navbar-buttons button {
+  background-color: #4CAF50; /* Green background for buttons */
+  color: white;
+  border: 2px solid #4CAF50; /* Border with same color as background */
+  border-radius: 30px; /* Rounded corners */
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: cursive;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  text-transform:capitalize; /* Uppercase text */
+}
+.navbar-buttons button:hover {
+  background-color: #45a049; /* Slightly darker green on hover */
+  border-color: #45a049;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+}
+.navbar-buttons button:active {
+  transform: scale(0.98); /* Slightly shrink the button on click */
+}
+.mainlogo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Logo shadow for depth */
+  transition: transform 0.3s ease; /* Smooth transition for logo hover */
+}
+.mainlogo:hover {
+  transform: scale(1.1); /* Scale the logo on hover */
+}

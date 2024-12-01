@@ -1,0 +1,93 @@
+.bmi-page {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  /* Fullscreen Image */
+  .fullscreen-image {
+    position: absolute;
+    width: 100%;
+    /* height: 100%; */
+    object-fit:fill;
+    z-index: -1;
+  }
+  
+  /* BMI Container */
+  .bmi-container {
+    width: 350px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(90, 31, 41, 0.167), rgba(0, 0, 0, 0.404));
+    color: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(255, 0, 0, 0.128), 0 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* .bmi-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(255, 0, 0, 0.5), 0 6px 15px rgba(0, 0, 0, 0.7);
+  } */
+  
+  .bmi-inputs input {
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(30, 30, 30, 0.9); /* Dark background */
+    color: white; /* White text for contrast */
+    font-size: 16px;
+    width: 90%;
+    text-align: center;
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.5); /* Inner shadow for depth */
+    margin: 10px 0;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  .bmi-inputs input:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Soft white glow on focus */
+    transform: scale(1.02);
+  }
+  
+  .bmi-inputs input::placeholder {
+    color: rgba(200, 200, 200, 0.7); /* Light gray placeholder text */
+  }
+  
+  /* Button */
+  .bmi-button {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, rgba(255, 0, 0, 0.8), rgba(90, 31, 41, 0.9));
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.3), 0 2px 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* .bmi-button:hover {
+    background: linear-gradient(135deg, rgba(255, 0, 0, 1), rgba(90, 31, 41, 1));
+    box-shadow: 0 6px 12px rgba(255, 0, 0, 0.5), 0 4px 10px rgba(0, 0, 0, 0.7);
+    transform: scale(1.05);
+  } */
+  
+  /* BMI Result */
+  .bmi-result {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #d1a0a0;
+  }
+  
