@@ -4,5 +4,11 @@
     "identifier": "chiranjeevi_barik@srmap.edu.in",
     "phone": "1234567890",
     "password": "$2b$10$QeNGKQagcMZDvc/oXGNoAOrMusg0u1Z6Mj02TkIZfMZqnq1tYPRDu"
+  },
+  {
+    "name": "raj",
+    "identifier": "harinarayana_rath@srmap.edu.in",
+    "phone": "08763086451",
+    "password": "$2b$10$rOgDOEsh677T8wyFR2ziYOBoxzFea1Jf.BUDNEGjLdECWLXAaaBli"
   }
 ]

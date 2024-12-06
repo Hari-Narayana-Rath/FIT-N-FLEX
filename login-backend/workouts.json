@@ -1,9 +1,292 @@
 {
-  "Monday": [],
-  "Tuesday": [],
-  "Wednesday": [],
-  "Thursday": [],
-  "Friday": [],
-  "Saturday": [],
-  "Sunday": []
+  "Monday": [
+    {
+      "id": 1,
+      "exercise": "Pushups",
+      "sets": "3 sets (15 reps)",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "exercise": "Incline Bench Press",
+      "sets": "3 sets (8-12 reps)",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "exercise": "Decline Bench Press",
+      "sets": "2 sets (8-12 reps)",
+      "completed": false
+    },
+    {
+      "id": 4,
+      "exercise": "Cable Fly",
+      "sets": "2 sets (12 reps)",
+      "completed": false
+    },
+    {
+      "id": 5,
+      "exercise": "Cable Crossover",
+      "sets": "2 sets (12 reps)",
+      "completed": false
+    },
+    {
+      "id": 6,
+      "exercise": "Machine Fly",
+      "sets": "2 sets (8-10 reps)",
+      "completed": false
+    },
+    {
+      "id": 1732988382244,
+      "exercise": "dfhdfh",
+      "sets": "12",
+      "completed": false
+    },
+    {
+      "id": 1732988566982,
+      "exercise": "ssafsa",
+      "sets": "12",
+      "completed": false
+    }
+  ],
+  "Tuesday": [
+    {
+      "id": 7,
+      "exercise": "Pull Ups",
+      "sets": "3 sets (6-7 reps)",
+      "completed": false
+    },
+    {
+      "id": 8,
+      "exercise": "Chin Ups",
+      "sets": "3 sets (6-7 reps)",
+      "completed": false
+    },
+    {
+      "id": 9,
+      "exercise": "Lat Pulldown",
+      "sets": "3 sets (8-12 reps)",
+      "completed": false
+    },
+    {
+      "id": 10,
+      "exercise": "Seated Cable Rows",
+      "sets": "3 sets (8-12 reps)",
+      "completed": false
+    },
+    {
+      "id": 11,
+      "exercise": "Smith Machine Bent Over",
+      "sets": "2 sets (8 reps)",
+      "completed": false
+    },
+    {
+      "id": 12,
+      "exercise": "Bent Over Row",
+      "sets": "2 sets (8 reps)",
+      "completed": false
+    }
+  ],
+  "Wednesday": [
+    {
+      "id": 13,
+      "exercise": "Squats",
+      "sets": "3 sets (12 reps)",
+      "completed": false
+    },
+    {
+      "id": 14,
+      "exercise": "Leg Press",
+      "sets": "3 sets (8-12 reps)",
+      "completed": false
+    },
+    {
+      "id": 15,
+      "exercise": "Lunges",
+      "sets": "3 sets (15 steps)",
+      "completed": false
+    },
+    {
+      "id": 16,
+      "exercise": "Sumo Squat",
+      "sets": "3 sets (8-12 reps)",
+      "completed": false
+    },
+    {
+      "id": 17,
+      "exercise": "Crunches",
+      "sets": "3 sets (8-12 reps)",
+      "completed": false
+    },
+    {
+      "id": 18,
+      "exercise": "Russian Twist",
+      "sets": "2 sets (8 reps)",
+      "completed": false
+    },
+    {
+      "id": 19,
+      "exercise": "Reverse Crunches",
+      "sets": "3 sets (8-12 reps)",
+      "completed": false
+    },
+    {
+      "id": 20,
+      "exercise": "Plank Hold",
+      "sets": "3 sets (2 minutes each)",
+      "completed": false
+    }
+  ],
+  "Thursday": [
+    {
+      "id": 21,
+      "exercise": "Overhead Barbell Press",
+      "sets": "3 sets (8-12 reps)",
+      "completed": false
+    },
+    {
+      "id": 22,
+      "exercise": "Dumbbell Lateral Raise",
+      "sets": "3 sets (12 reps)",
+      "completed": false
+    },
+    {
+      "id": 23,
+      "exercise": "Front Dumbbell Raise",
+      "sets": "3 sets (12 reps)",
+      "completed": false
+    },
+    {
+      "id": 24,
+      "exercise": "Arnold Press",
+      "sets": "2 sets (8-12 reps)",
+      "completed": false
+    },
+    {
+      "id": 25,
+      "exercise": "Rear Delt Fly",
+      "sets": "2 sets (12 reps)",
+      "completed": false
+    },
+    {
+      "id": 26,
+      "exercise": "Face Pulls",
+      "sets": "2 sets (12 reps)",
+      "completed": false
+    }
+  ],
+  "Friday": [
+    {
+      "id": 27,
+      "exercise": "Barbell Bicep Curls",
+      "sets": "3 sets (8-12 reps)",
+      "completed": true
+    },
+    {
+      "id": 28,
+      "exercise": "Hammer Curls",
+      "sets": "3 sets (12 reps)",
+      "completed": true
+    },
+    {
+      "id": 29,
+      "exercise": "Incline Dumbbell Curls",
+      "sets": "3 sets (8-12 reps)",
+      "completed": true
+    },
+    {
+      "id": 30,
+      "exercise": "Concentration Curls",
+      "sets": "2 sets (12 reps)",
+      "completed": true
+    },
+    {
+      "id": 31,
+      "exercise": "Cable Bicep Curls",
+      "sets": "2 sets (12 reps)",
+      "completed": true
+    },
+    {
+      "id": 32,
+      "exercise": "Reverse Barbell Curls",
+      "sets": "2 sets (8-12 reps)",
+      "completed": true
+    }
+  ],
+  "Saturday": [
+    {
+      "id": 33,
+      "exercise": "Close-Grip Bench Press",
+      "sets": "3 sets (8-12 reps)",
+      "completed": true
+    },
+    {
+      "id": 34,
+      "exercise": "Tricep Pushdowns",
+      "sets": "3 sets (12 reps)",
+      "completed": true
+    },
+    {
+      "id": 35,
+      "exercise": "Overhead Dumbbell Tricep Extension",
+      "sets": "3 sets (8-12 reps)",
+      "completed": false
+    },
+    {
+      "id": 36,
+      "exercise": "Dips",
+      "sets": "2 sets (8-12 reps)",
+      "completed": false
+    },
+    {
+      "id": 37,
+      "exercise": "Skull Crushers",
+      "sets": "2 sets (8-12 reps)",
+      "completed": false
+    },
+    {
+      "id": 38,
+      "exercise": "Tricep Kickbacks",
+      "sets": "2 sets (12 reps)",
+      "completed": false
+    }
+  ],
+  "Sunday": [
+    {
+      "id": 33,
+      "exercise": "Close-Grip Bench Press",
+      "sets": "3 sets (8-12 reps)",
+      "completed": true
+    },
+    {
+      "id": 34,
+      "exercise": "Tricep Pushdowns",
+      "sets": "3 sets (12 reps)",
+      "completed": false
+    },
+    {
+      "id": 35,
+      "exercise": "Overhead Dumbbell Tricep Extension",
+      "sets": "3 sets (8-12 reps)",
+      "completed": false
+    },
+    {
+      "id": 36,
+      "exercise": "Dips",
+      "sets": "2 sets (8-12 reps)",
+      "completed": false
+    },
+    {
+      "id": 37,
+      "exercise": "Skull Crushers",
+      "sets": "2 sets (8-12 reps)",
+      "completed": false
+    },
+    {
+      "id": 38,
+      "exercise": "Tricep Kickbacks",
+      "sets": "2 sets (12 reps)",
+      "completed": false
+    }
+  ]
 }

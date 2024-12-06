@@ -1,82 +1,16 @@
 {
   "users": [
     {
-      "id": "b658",
-      "name": "rj",
-      "age": "18",
-      "hidden": true
-    },
-    {
-      "id": "435a",
-      "name": "uk",
-      "age": "15",
-      "hidden": true
-    },
-    {
-      "id": "a604",
-      "name": "olk",
-      "age": "45",
-      "hidden": true
-    },
-    {
-      "id": "45cf",
-      "name": "bicep curl",
-      "age": "12",
-      "hidden": true
-    },
-    {
-      "id": "48e6",
-      "name": "hgjfhgkh",
-      "age": "12",
-      "hidden": true
-    },
-    {
-      "id": "6eaf",
-      "name": "dsgdsg",
-      "age": "12",
-      "hidden": true
-    },
-    {
-      "id": "f016",
-      "name": "ddsgfsdg",
-      "age": "12",
-      "hidden": true
-    },
-    {
-      "id": "08da",
-      "name": "gfjfgj",
-      "age": "122",
-      "hidden": true
-    },
-    {
-      "id": "4c02",
-      "name": "bicep curl",
-      "age": "12",
-      "hidden": true
-    },
-    {
-      "id": "fad2",
-      "name": "jbkdjsa",
-      "age": "12",
-      "hidden": true
-    },
-    {
-      "id": "0b14",
-      "name": "squats",
-      "age": "3",
-      "hidden": true
-    },
-    {
-      "id": "bf92",
-      "name": "ukkk",
-      "age": "12",
-      "hidden": true
-    },
-    {
-      "id": "2be4",
+      "id": "bc02",
       "name": "bicep curls",
-      "age": "3*12",
-      "hidden": false
+      "age": "3*8",
+      "hidden": true
+    },
+    {
+      "id": "030c",
+      "name": "bc",
+      "age": "12*8",
+      "hidden": true
     }
   ]
 }

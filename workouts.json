@@ -253,10 +253,40 @@
   ],
   "Sunday": [
     {
-      "id": 39,
-      "exercise": "Rest Day",
-      "sets": "Rest Day",
+      "id": 33,
+      "exercise": "Close-Grip Bench Press",
+      "sets": "3 sets (8-12 reps)",
       "completed": true
+    },
+    {
+      "id": 34,
+      "exercise": "Tricep Pushdowns",
+      "sets": "3 sets (12 reps)",
+      "completed": true
+    },
+    {
+      "id": 35,
+      "exercise": "Overhead Dumbbell Tricep Extension",
+      "sets": "3 sets (8-12 reps)",
+      "completed": false
+    },
+    {
+      "id": 36,
+      "exercise": "Dips",
+      "sets": "2 sets (8-12 reps)",
+      "completed": false
+    },
+    {
+      "id": 37,
+      "exercise": "Skull Crushers",
+      "sets": "2 sets (8-12 reps)",
+      "completed": false
+    },
+    {
+      "id": 38,
+      "exercise": "Tricep Kickbacks",
+      "sets": "2 sets (12 reps)",
+      "completed": false
     }
   ]
 }

@@ -1,0 +1,915 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black; /* Set background to black */
+    color: white; /* Set text color to white for better contrast */
+    font-family: "Arial", sans-serif;
+    overflow-x: hidden;
+  }
+  
+  
+  .fullscreen-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+  /* Navbar remains on top of the video */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(51, 51, 51, 0.4);
+    backdrop-filter: blur(5px);
+    color: white;
+    padding: 10px 20px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+    border-radius: 40px;
+  }
+  
+  /* Content styling */
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 80vh;
+    margin-top: 80px;
+  }
+  
+  /* Cards container */
+  .cards-container {
+    display: flex; /* Ensures cards are in a line */
+    justify-content: center;
+    gap: 20px; /* Spacing between the cards */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    max-width: 900px;
+    margin-top: 40px;
+  }
+  
+  /* Card styling */
+  .card {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    border-radius: 20px;
+    padding: 20px;
+    width: 250px; /* Reduced width for smaller cards */
+    height: 300px; /* Fixed height for uniform size */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card img {
+    width: 80%; /* Resize image to fit within the card */
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease; /* Smooth hover effect for images */
+  }
+  
+  /* Hover effect: Enlarge the card */
+  .card:hover {
+    transform: scale(1.1); /* Enlarge the card */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Image-specific hover effect */
+  .card img:hover {
+    transform: scale(1.2); /* Slightly enlarge the image */
+  }
+  
+  /* Animation keyframes for each card */
+  @keyframes slideInFromLeft {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInFromRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInFromTop {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Apply animations to the cards */
+  .cards-container .card:nth-child(1) {
+    animation: slideInFromLeft 1.2s ease forwards;
+  }
+  
+  .cards-container .card:nth-child(2) {
+    animation: slideInFromRight 1.2s ease forwards;
+  }
+  
+  .cards-container .card:nth-child(3) {
+    animation: slideInFromTop 1.2s ease forwards;
+  }
+  
+  /* Media queries for responsiveness */
+  @media (max-width: 600px) {
+    .cards-container {
+      flex-wrap: wrap; /* Allows cards to stack vertically */
+    }
+  
+    .card {
+      width: 90%; /* Full width for smaller screens */
+      height: auto; /* Adjust height for better display */
+    }
+  }
+  
+  .bmi-page {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  /* Fullscreen Image */
+  .fullscreen-image {
+    position: absolute;
+    width: 100%;
+    /* height: 100%; */
+    object-fit:fill;
+    z-index: -1;
+  }
+  
+  /* BMI Container */
+  .bmi-container {
+    width: 350px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(90, 31, 41, 0.167), rgba(0, 0, 0, 0.404));
+    color: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(255, 0, 0, 0.128), 0 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* .bmi-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(255, 0, 0, 0.5), 0 6px 15px rgba(0, 0, 0, 0.7);
+  } */
+  
+  .bmi-inputs input {
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(30, 30, 30, 0.9); /* Dark background */
+    color: white; /* White text for contrast */
+    font-size: 16px;
+    width: 90%;
+    text-align: center;
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.5); /* Inner shadow for depth */
+    margin: 10px 0;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  .bmi-inputs input:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Soft white glow on focus */
+    transform: scale(1.02);
+  }
+  
+  .bmi-inputs input::placeholder {
+    color: rgba(200, 200, 200, 0.7); /* Light gray placeholder text */
+  }
+  
+  /* Button */
+  .bmi-button {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, rgba(255, 0, 0, 0.8), rgba(90, 31, 41, 0.9));
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.3), 0 2px 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* .bmi-button:hover {
+    background: linear-gradient(135deg, rgba(255, 0, 0, 1), rgba(90, 31, 41, 1));
+    box-shadow: 0 6px 12px rgba(255, 0, 0, 0.5), 0 4px 10px rgba(0, 0, 0, 0.7);
+    transform: scale(1.05);
+  } */
+  
+  /* BMI Result */
+  .bmi-result {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #d1a0a0;
+  }
+  body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  .calendar {
+    background-color: #0a0a1d; /* Dark background */
+    color: #ffffff; /* Light text color */
+    min-height: 94vh; /* Full height to center vertically */
+    display: flex; /* Flexbox for centering */
+    flex-direction: column; /* Align content in a column */
+    justify-content: left; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    padding: 20px;
+    text-align: center; /* Center text */
+    background-image: url("/b3.webp"); /* Path to the background image */
+    background-size: cover; /* Ensure the background image covers the entire container */
+    background-position: left; /* Center the background image */
+    background-attachment:fixed; /* Fixed background while scrolling */
+  }
+  
+  /* Styling the list */
+  .calendar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 500px; /* Restrict width for better readability */
+  }
+  
+  /* Styling individual list items */
+  .calendar li {
+    background-color: rgba(30, 30, 47, 0.518); /* Slightly lighter dark background with transparency */
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px; /* Rounded corners */
+    display: flex; /* Flexbox for content alignment */
+    align-items: center;
+    justify-content: space-between; /* Space between checkbox and text */
+  }
+  
+  /* Styling the checkbox and text */
+  .calendar li label {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    color: #e5e5e5; /* Subtle light text */
+    font-size: 16px;
+  }
+  
+  /* Styling the progress link button */
+  .progress-link {
+    margin-top: 20px;
+    padding: 12px 18px;
+    background-color: #007bff;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .progress-link:hover {
+    background-color: rgb(43, 145, 43);
+  }
+  
+  /* Add hover effect for list items */
+  .calendar li:hover {
+    background-color: rgba(58, 58, 92, 0.8); /* Highlighted background with transparency */
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Make inputs and text visually distinct */
+  .calendar input[type="checkbox"] {
+    transform: scale(1.2); /* Larger checkbox for better usability */
+    margin-right: 10px;
+  }
+  
+  /* Title styling */
+  .calendar h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px; /* Space below the title */
+    color: wheat;
+  }
+  
+  /* Logo styling */
+  .logo-link {
+    display: inline-block;
+    margin-bottom: 20px; /* Space below the logo */
+  }
+  
+  .logo {
+    max-width: 80px; /* Adjust size of the logo */
+    height: auto;
+    border-radius: 50px;
+  }
+  .add-workout {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .add-workout input {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+  }
+  
+  .add-workout button {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .add-workout button:hover {
+    background-color: #0056b3;
+  }
+  
+  .progress-link {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .progress-link:hover {
+    background-color: #0056b3;
+  }
+  .add-workout-button {
+    margin-top: 20px;
+    padding: 12px 18px;
+    background-color: #28a745;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-workout-button:hover {
+    background-color: #218838;
+  }
+  /* Calendar CSS */
+  .calendar {
+    background-color: #0a0a1d;
+    color: white;
+    min-height: 94vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .progress-link, .add-workout-link {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .progress-link:hover, .add-workout-link:hover {
+    background-color: #0056b3;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.091);
+    color: white;
+  }
+  
+  .login-page {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .fullscreen-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+  .message {
+    position: absolute;
+    color: rgb(204, 186, 186);
+    font-size: 3rem;
+    text-align: center;
+    animation: fade-in-out 5s ease forwards;
+    z-index: 1;
+  }
+  
+  .login-container {
+    width: 350px;
+    height: 500px; /* Increased height to fit the signup form */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(90, 31, 41, 0.338), rgba(143, 131, 188, 0.037));
+    color: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(255, 0, 0, 0.128), 0 4px 10px rgba(0, 0, 0, 0.537);
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    animation: fade-in 2s ease forwards;
+    animation-delay: 0.5s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .login-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(255, 0, 0, 0.199), 0 6px 15px rgba(0, 0, 0, 0.7);
+  }
+  
+  .login-form h2 {
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 34px;
+  }
+  
+  .login-form input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+  
+  .login-form button {
+    width: 90%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 40px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .login-form button:hover {
+    background-color: #45a049;
+  }
+  
+  .login-form p {
+    text-align: center;
+    font-size: 14px;
+    color: white;
+    font-size: 1rem;
+  }
+  
+  .login-form .redirect-link {
+    color: rgb(183, 151, 213);
+    cursor: pointer;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.3rem;
+  }
+  
+  .login-form .redirect-link:hover {
+    text-decoration: underline;
+  }
+  
+  @keyframes fade-in-out {
+    0% {
+      opacity: 0;
+    }
+  
+    20% {
+      opacity: 1;
+    }
+  
+    80% {
+      opacity: 1;
+    }
+  
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .back-to-home-image {
+    width: 100px;
+    height: auto;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto;
+    opacity: 0.9;
+    border-radius: 50%;
+  }
+  
+  .back-to-home-image:hover {
+    opacity: 1;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(71, 69, 69, 0.689); /* Transparent background */
+    backdrop-filter: blur(5px); /* Optional blur effect */
+    color: white;
+    padding: 10px 20px; /* Reduced padding to decrease height */
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100; /* Ensure it appears above the video */
+    box-sizing: border-box;
+    border-radius: 40px;
+  }
+  
+  .navbar-title {
+    color:rgb(169, 194, 194);
+    font-size: 3rem; /* Slightly smaller font size */
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
+  
+  .navbar-buttons {
+    gap: 10px; /* Adjust gap if needed for smaller padding */
+  }
+  
+  .navbar-buttons button {
+    background-color: #4CAF50; /* Green background for buttons */
+    color: white;
+    border: 2px solid #4CAF50; /* Border with same color as background */
+    border-radius: 30px; /* Rounded corners */
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: cursive;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    text-transform:capitalize; /* Uppercase text */
+  }
+  .navbar-buttons button:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+    border-color: #45a049;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+  }
+  .navbar-buttons button:active {
+    transform: scale(0.98); /* Slightly shrink the button on click */
+  }
+  .mainlogo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Logo shadow for depth */
+    transition: transform 0.3s ease; /* Smooth transition for logo hover */
+  }
+  .mainlogo:hover {
+    transform: scale(1.1); /* Scale the logo on hover */
+  }
+  /* General Body Styling */
+body {
+    background-image: url('b3.webp');
+    /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+}
+
+/* Container */
+.lion-container {
+    padding: 20px;
+    max-width: 700px;
+    width: 90%;
+    background-color: rgba(20, 20, 50, 0.9);
+    color: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Headings */
+.elephant-heading {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffd700;
+    text-shadow: 3px 3px 15px rgba(0, 0, 0, 1);
+}
+
+.sub-heading {
+    font-size: 1.8rem;
+    color: #ff8c00;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+/* Inputs and Buttons */
+.zebra-input,
+.kangaroo-input {
+    width: 90%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid #ffd700;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: #fff;
+    outline: none;
+    margin-bottom: 15px;
+    /* Added spacing between input boxes */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.zebra-input:focus,
+.kangaroo-input:focus {
+    border-color: #ff8c00;
+    box-shadow: 0 0 10px rgba(255, 140, 0, 0.54);
+}
+
+.panda-btn {
+    background-color: #28a745;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.panda-btn:hover {
+    background-color: #218838;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-left: auto;
+    transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+.clear-btn {
+    background-color: #ffc107;
+    color: #333;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.clear-btn:hover {
+    background-color: #e0a800;
+}
+
+/* List Items */
+.koala-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(41, 41, 66, 0.9);
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.koala-item:hover {
+    background-color: rgba(58, 58, 92, 0.9);
+}
+
+.koala-text {
+    font-size: 1rem;
+    color: #e5e5e5;
+}
+.profile-container {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url("/try3.jpg") no-repeat center center;
+    background-size: cover;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  /* Styled container similar to the BMI container */
+  .profile-card {
+    background: linear-gradient(135deg, #0a0d0f, #5c1717);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    position: relative; /* To position logo inside the card */
+  }
+  
+  /* Clickable logo inside the card */
+  .logo-container {
+    position: absolute;
+    top: -30px; /* Moves the logo slightly above the card */
+    left: 50%;
+    transform: translateX(-50%); /* Center the logo horizontally */
+    cursor: pointer;
+  }
+  
+  .logo-image {
+    width: 100px; /* Adjust size as needed */
+    height: 100px;
+    border-radius: 50%; /* Make the logo circular */
+    border: 2px solid white; /* Optional: Add a border for emphasis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Hover effect for the logo */
+  .logo-container:hover .logo-image {
+    transform: scale(1.1); /* Enlarge slightly on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+  }
+  
+  .profile-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: wheat;
+    margin-bottom: 15px;
+    margin-top: 50px; /* Adjust for logo placement */
+  }
+  
+  .profile-email,
+  .profile-phone {
+    font-size: 18px;
+    color: #55a2d8;
+    margin-bottom: 10px;
+  }
+  body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Main progress container */
+.progress {
+  background-color: #0a0a1d; /* Dark background */
+  color: wheat; /* Light text color */
+  min-height: 94vh; /* Full height to center vertically */
+  display: flex; /* Flexbox for centering */
+  flex-direction: column; /* Align content in a column */
+  justify-content: left; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  padding: 20px;
+  text-align: center; /* Center text */
+  background-image: url("/b3.webp"); /* Path to the background image */
+  background-size: cover; /* Ensure the background image covers the entire container */
+  background-position: left; /* Center the background image */
+  background-attachment:fixed; /* Fixed background while scrolling */
+}
+
+/* Styling the list */
+.progress ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 500px; /* Restrict width for better readability */
+}
+
+/* Styling individual list items */
+.progress li {
+  background-color: rgba(30, 30, 47, 0.518); /* Slightly lighter dark background with transparency */
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 8px; /* Rounded corners */
+  display: flex; /* Flexbox for content alignment */
+  align-items: center;
+  justify-content: space-between; /* Space between checkbox and text */
+}
+
+.back-button {
+  margin-top: 20px;
+  padding: 12px 15px;
+  background-color: rgb(43, 145, 43);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #007bff;
+}
+
+/* Add hover effect for list items */
+.progress li:hover {
+  background-color: rgba(58, 58, 92, 0.8); /* Highlighted background with transparency */
+  transition: background-color 0.3s ease;
+}
+
+/* Title styling */
+.progress h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px; /* Space below the title */
+}
+/* Progress CSS */
+.progress {
+  background-color: #f4f4f4;
+  padding: 20px;
+  text-align: center;
+}
+
+.back-button {
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.back-button:hover {
+  background-color: #0056b3;
+}
